@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "7ff0cd4b-09a5-43dc-8f36-fef3ce6562b5",
+		"name": "arms",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getPoints",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/points",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"points"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPointById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/points/dsdsd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"points",
+						"dsdsd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postPoint",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Topic 1\",\n\t\"author\": \"5c97eb3fbcf0f220e247957a\",\n\t\"post\": \"5c995c911212a734b4cdc95e\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/points",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"points"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putPointById",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"location\": {\n        \"latitude\": 50.0679198,\n        \"longitude\": 19.9107528\n    },\n    \"PM10\": 100,\n    \"PM2_5\": 45,\n    \"datetime\": \"2019-05-13T17:27:34.682Z\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/points/5cd9a906f991c12ab78e0039",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"points",
+						"5cd9a906f991c12ab78e0039"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePointById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/points/5cd9a977f991c12ab78e003a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"points",
+						"5cd9a977f991c12ab78e003a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
