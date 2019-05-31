@@ -43,12 +43,10 @@ def create_point(measurement, installation):
     }
 def get_measurements_for_installations(installations):
     points = []
-    number_of_installation = 0
-    for installation in installations[221:]:
+    for installation in installations:
         measurements = call_request(measurements_url + str(installation["id"]))["history"]
         for measurement in measurements:
             points.append(create_point(measurement, installation))
-        number_of_installation = number_of_installation + 1
     
     return points 
 
