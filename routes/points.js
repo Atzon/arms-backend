@@ -14,7 +14,8 @@ router.post('/', async (req, res) => {
 
     let post = new Point({ location: req.body.location,
                                PM10: req.body.PM10,
-                              PM2_5: req.body.PM2_5});
+                              PM2_5: req.body.PM2_5,
+                           datetime: req.body.datetime});
     post = await post.save();
 
     res.send(post);
@@ -27,7 +28,8 @@ router.put('/:id', async (req, res) => {
     const post = await Point.findByIdAndUpdate(req.params.id,
         { location: req.body.location,
                      PM10: req.body.PM10,
-                    PM2_5: req.body.PM2_5},
+                    PM2_5: req.body.PM2_5,
+                 datetime: req.body.datetime},
         {
             new: true
         });
