@@ -3,6 +3,7 @@ const dynamoose = require('dynamoose');
 const express = require('express');
 const app = express();
 const points = require('./routes/points');
+const points2 = require('./routes/points2');
 const measurements = require('./routes/measurements');
 const devices = require("./routes/devices");
 const cors = require('cors');
@@ -23,9 +24,10 @@ dynamoose.AWS.config.update({
     region: AWS_REGION
 });
 
-app.use(cors({origin: '*'}));
+app.use(cors({origin: ['http://ec2-3-83-10-158.compute-1.amazonaws.com', 'http://arms.net.pl']}));
 app.use(express.json());
 app.use('/api/points', points);
+app.use('/api/points2', points2);
 app.use('/api/measurements', measurements);
 app.use('/api/devices', devices);
 
