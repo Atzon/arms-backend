@@ -27,7 +27,12 @@ router.get('/:id', async (req, res) => {
 
     measurements = measurements.map(measurement => {
         const location = mapToDevice(devices, measurement.StationID, stationType);
-        return {...measurement, "Latitude": location.Latitude, "Longitude": location.Longitude};
+        return {
+            PM2_5: measurement.PM25,
+            PM10: measurement.PM10,
+            datetime: measurement.Datetime,
+            location: location
+        };
     });
 
     res.send(measurements);
@@ -39,7 +44,7 @@ mapToDevice = (devices, stationId, stationType) => {
     const res = devices.find(device => device.StationType == stationType &&
         device.StationID == stationId);
 
-    return {"Latitude": res.Latitude, "Longitude": res.Longitude};
+    return {latitude: res.Latitude, longitude: res.Longitude};
 };
 
 
